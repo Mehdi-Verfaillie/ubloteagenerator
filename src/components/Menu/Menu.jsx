@@ -17,7 +17,7 @@ import "react-color-palette/lib/css/styles.css";
 
 export default function Menu() {
     const { state: { teaName, colors }, dispatch } = useContext(AppContext);
-    const [color, setColor] = useColor("hex", "#121212");
+    const [color, setColor] = useColor("hex", "#121212"); /** Color picker */
 
     const handleSelectColorPalette = (index) => {
     };

@@ -13,7 +13,7 @@ import {
 import { AppContext } from '../../contexts/app.context';
 
 export default function MatchaTea() {
-    const { state: { teaName } } = useContext(AppContext);
+    const { state: { teaName, colors } } = useContext(AppContext);
     const svgResize = {
         defaultViewBox: '-40 -20 230 230',
         width: '200px',
@@ -21,12 +21,10 @@ export default function MatchaTea() {
 
     return (
         <MainContainer>
-            <SVGContainer
-                viewBox="-10 0 300 110"
-            >
-                <Cup />
-                <Liquid />
-                <Tapioca />
+            <SVGContainer viewBox="-10 0 300 110">
+                <Cup colors={colors} />
+                <Liquid colors={colors} />
+                <Tapioca colors={colors} />
             </SVGContainer>
 
             <TeaTitle>{teaName}</TeaTitle>
