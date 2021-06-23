@@ -3,7 +3,7 @@ import React, { useReducer } from 'react';
 export const AppContext = React.createContext([{}, () => { }]);
 
 const initialState = {
-    teaName: '',
+    teaName: 'Thé Matcha',
 };
 
 const reducer = (state, action) => {

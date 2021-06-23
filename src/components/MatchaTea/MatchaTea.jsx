@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Cup from './Cup/Cup';
 import Liquid from './Liquid/Liquid';
 import Tapioca from './Tapioca/Tapioca';
@@ -10,8 +10,10 @@ import {
     OverviewContainer,
     OverviewElement,
 } from './style';
+import { AppContext } from '../../contexts/app.context';
 
 export default function MatchaTea() {
+    const { state: { teaName } } = useContext(AppContext);
     const svgResize = {
         defaultViewBox: '-40 -20 230 230',
         width: '200px',
@@ -27,7 +29,7 @@ export default function MatchaTea() {
                 <Tapioca />
             </SVGContainer>
 
-            <TeaTitle>Hello</TeaTitle>
+            <TeaTitle>{teaName}</TeaTitle>
 
             <OverviewContainer>
                 {[<Cup vb={svgResize} />, <Liquid vb={svgResize} />, <Tapioca vb={svgResize} />].map((item, index) => (
