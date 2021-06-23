@@ -5,7 +5,7 @@ const MenuContainer = styled.div`
     min-width: 250px;
     height: 100vh;
     background-color: red;
-    padding: 30px 5px;
+    padding: 0 5px;
 `;
 
 const MenuTitle = styled.p`

@@ -4,7 +4,7 @@ import Menu from "./components/Menu/Menu";
 
 const App = () => {
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", justifyContent: 'space-between' }}>
       <MatchaTea />
       <Menu />
     </div>
