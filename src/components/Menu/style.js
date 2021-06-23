@@ -42,7 +42,7 @@ const CategoryTextInput = styled.input`
 const MenuColorInput = styled.div`
     width: 30px;
     height: 30px;
-    background-color: yellow;
+    background-color: ${({ colors, index }) => colors[index]};
 `;
 
 export {

@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ColorPicker, useColor } from "react-color-palette";
+import Slider from 'rc-slider';
+
 import {
     MenuContainer,
     MenuTitle,
@@ -7,11 +10,18 @@ import {
     CategoryTextInput,
     MenuColorInput,
 } from './style';
-import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
+import { AppContext } from '../../contexts/app.context';
 
+import 'rc-slider/assets/index.css';
+import "react-color-palette/lib/css/styles.css";
 
 export default function Menu() {
+    const { state: { teaName, colors }, dispatch } = useContext(AppContext);
+    const [color, setColor] = useColor("hex", "#121212");
+
+    const handleSelectColorPalette = (index) => {
+    };
+
     return (
         <MenuContainer>
             <MenuTitle>BUBBLE TEA GENERATOR</MenuTitle>
@@ -19,16 +29,22 @@ export default function Menu() {
             <CategoryContainer>
                 <CategoryTitle>NOM</CategoryTitle>
                 <CategoryTextInput
-                    placeholder="Hello"
+                    placeholder="My super tea name"
+                    value={teaName}
+                    onChange={(e) => dispatch({ type: 'SET_TEA_NAME', value: e.target.value })}
                 />
             </CategoryContainer>
 
             {['GOBELET', 'TEA', 'TAPIOCA'].map((element, index) => (
-                <CategoryContainer key={index}>
+                <CategoryContainer
+                    key={index}
+                    onClick={() => handleSelectColorPalette(index)}
+                >
                     <CategoryTitle>{element}</CategoryTitle>
-                    <MenuColorInput />
+                    <MenuColorInput colors={colors} index={index} />
                 </CategoryContainer>
             ))}
+            <ColorPicker width={456} height={228} color={color} onChange={setColor} hideHSV dark />
 
             <CategoryContainer>
                 <CategoryTitle>TAILLE</CategoryTitle>
