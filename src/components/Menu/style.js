@@ -4,8 +4,8 @@ const MenuContainer = styled.div`
     width: 22%;
     min-width: 250px;
     height: 100vh;
-    background-color: red;
     padding: 0 5px;
+    background-color: black;
 `;
 
 const MenuTitle = styled.p`
@@ -19,7 +19,6 @@ const MenuTitle = styled.p`
 
 const CategoryContainer = styled.div`
     display: flex;
-    background-color: purple;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;

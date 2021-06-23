@@ -14,7 +14,6 @@ const SVG = styled.svg.attrs({
 })``;
 
 const SVGContainer = styled(SVG)`
-    background-color: purple;
     height: 60%;
     width: 100%;
 `;
@@ -27,18 +26,14 @@ const TeaTitle = styled.p`
 `;
 
 const OverviewContainer = styled.div`
-    background-color: green;
     display: flex;
     width: 100%;
     height: 35%;
-    border-top: 10px solid  purple;
+    border-top: 10px solid  white;
 `;
 
 const OverviewElement = styled.div`
-    background-color: brown;
     width: 33.3333%;
-    ${'' /* height: 300px; */}
-    ${'' /* overflow: hidden; */}
     &:nth-child(2) {
         border-left:  10px solid  #09f;
         border-right:  10px solid #f0F;
