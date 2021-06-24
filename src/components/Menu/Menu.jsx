@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { ColorPicker, useColor } from "react-color-palette";
+import { ColorPicker, useColor } from 'react-color-palette';
 import Slider from 'rc-slider';
 
 import {
@@ -15,12 +15,12 @@ import {
 import { AppContext } from '../../contexts/app.context';
 
 import 'rc-slider/assets/index.css';
-import "react-color-palette/lib/css/styles.css";
+import 'react-color-palette/lib/css/styles.css';
 
 export default function Menu() {
     const { state: { teaName, colors }, dispatch } = useContext(AppContext);
     const [colorPaletteIndex, setColorPaletteIndex] = useState(-1);
-    const [color] = useColor("hex", colors[colorPaletteIndex !== -1 ? colorPaletteIndex : 0]); /** Color picker */
+    const [color] = useColor('hex', colors[colorPaletteIndex !== -1 ? colorPaletteIndex : 0]); /** Color picker */
 
     return (
         <MenuContainer

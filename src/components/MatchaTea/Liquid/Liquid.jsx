@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Liquid({ vb, colors }) {
+export default function Liquid({ colors }) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="280" height="100%" viewBox="0 0 133.2 188.9" preserveAspectRatio="xMidYMid meet">
             <g id="tea">

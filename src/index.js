@@ -5,11 +5,9 @@ import reportWebVitals from './reportWebVitals';
 import AppContextProvider from './contexts/app.context';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <AppContextProvider>
-      <App />
-    </AppContextProvider>
-  </React.StrictMode>,
+  <AppContextProvider>
+    <App />
+  </AppContextProvider>,
   document.getElementById('root')
 );
 
