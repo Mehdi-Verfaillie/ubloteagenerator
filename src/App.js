@@ -1,4 +1,5 @@
 import './styles/reset.css';
+import './styles/font.css';
 import MatchaTea from "./components/MatchaTea/MatchaTea";
 import Menu from "./components/Menu/Menu";
 

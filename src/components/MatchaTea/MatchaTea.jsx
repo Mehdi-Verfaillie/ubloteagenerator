@@ -14,10 +14,6 @@ import { AppContext } from '../../contexts/app.context';
 
 export default function MatchaTea() {
     const { state: { teaName, colors, scale } } = useContext(AppContext);
-    const svgResize = {
-        defaultViewBox: '-40 -20 230 230',
-        width: '200px',
-    };
 
     return (
         <MainContainer>
@@ -30,7 +26,7 @@ export default function MatchaTea() {
             <TeaTitle>{teaName}</TeaTitle>
 
             <OverviewContainer>
-                {[<Cup vb={svgResize} />, <Liquid vb={svgResize} />, <Tapioca vb={svgResize} />].map((item, index) => (
+                {[<Cup frozen />, <Liquid frozen />, <Tapioca frozen />].map((item, index) => (
                     <OverviewElement key={index}>
                         {item}
                     </OverviewElement>

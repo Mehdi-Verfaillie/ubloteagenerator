@@ -21,8 +21,8 @@ const SVGContainer = styled(SVG)`
 
 const TeaTitle = styled.p`
     color: #FFF;
-    font-size: 18;
-    font-family: Arial;
+    font-size: 28px;
+    font-family: 'Big Shoulders Stencil Display', cursive;
     text-align: center;
 `;
 
@@ -31,6 +31,7 @@ const OverviewContainer = styled.div`
     width: 100%;
     height: 35%;
     border-top: 10px solid  white;
+    box-sizing: border-box;
 `;
 
 const OverviewElement = styled.div`

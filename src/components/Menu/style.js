@@ -10,8 +10,8 @@ const MenuContainer = styled.div`
 
 const MenuTitle = styled.p`
     color: #FFF;
-    font-size: 18;
-    font-family: Arial;
+    font-size: 18px;
+    font-family: 'Big Shoulders Stencil Display', cursive;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 50px;
