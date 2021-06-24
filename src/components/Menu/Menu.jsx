@@ -9,6 +9,7 @@ import {
     CategoryTitle,
     CategoryTextInput,
     MenuColorInput,
+    ColorPickerContainer,
 } from './style';
 import { AppContext } from '../../contexts/app.context';
 
@@ -17,12 +18,12 @@ import "react-color-palette/lib/css/styles.css";
 
 export default function Menu() {
     const { state: { teaName, colors }, dispatch } = useContext(AppContext);
-    const [color, setColor] = useColor("hex", "#121212"); /** Color picker */
-    const [colorPaletteIndex, setColorPaletteIndex] = useState(null);
+    const [colorPaletteIndex, setColorPaletteIndex] = useState(-1);
+    const [color] = useColor("hex", colors[colorPaletteIndex !== -1 ? colorPaletteIndex : 0]); /** Color picker */
 
     return (
         <MenuContainer
-            onMouseLeave={() => setColorPaletteIndex(null)}
+            onMouseLeave={() => setColorPaletteIndex(-1)}
         >
             <MenuTitle>BUBBLE TEA GENERATOR</MenuTitle>
 
@@ -44,8 +45,16 @@ export default function Menu() {
                     <MenuColorInput colors={colors} index={index} />
                 </CategoryContainer>
             ))}
-            {colorPaletteIndex !== null && (
-                <ColorPicker width={456} height={228} color={color} onChange={setColor} hideHEX hideRGB hideHSB dark />
+            {colorPaletteIndex !== -1 && (
+                <ColorPickerContainer>
+                    <ColorPicker
+                        width={456}
+                        height={228}
+                        onChange={(e) => [colors.splice(colorPaletteIndex, 1, e.hex), dispatch({ type: 'SET_COLORS', value: colors })]}
+                        dark
+                        color={color}
+                    />
+                </ColorPickerContainer>
             )}
 
             <CategoryContainer>

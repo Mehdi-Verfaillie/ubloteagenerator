@@ -45,6 +45,12 @@ const MenuColorInput = styled.div`
     cursor: pointer;
 `;
 
+const ColorPickerContainer = styled.div`
+    position: absolute;
+    right: 0;
+    z-index: 1;
+`;
+
 export {
     MenuContainer,
     MenuTitle,
@@ -52,4 +58,5 @@ export {
     CategoryTitle,
     CategoryTextInput,
     MenuColorInput,
+    ColorPickerContainer,
 };
