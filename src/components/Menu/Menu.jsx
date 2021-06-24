@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { ColorPicker, useColor } from "react-color-palette";
 import Slider from 'rc-slider';
 
@@ -18,12 +18,12 @@ import "react-color-palette/lib/css/styles.css";
 export default function Menu() {
     const { state: { teaName, colors }, dispatch } = useContext(AppContext);
     const [color, setColor] = useColor("hex", "#121212"); /** Color picker */
-
-    const handleSelectColorPalette = (index) => {
-    };
+    const [colorPaletteIndex, setColorPaletteIndex] = useState(null);
 
     return (
-        <MenuContainer>
+        <MenuContainer
+            onMouseLeave={() => setColorPaletteIndex(null)}
+        >
             <MenuTitle>BUBBLE TEA GENERATOR</MenuTitle>
 
             <CategoryContainer>
@@ -38,13 +38,15 @@ export default function Menu() {
             {['GOBELET', 'TEA', 'TAPIOCA'].map((element, index) => (
                 <CategoryContainer
                     key={index}
-                    onClick={() => handleSelectColorPalette(index)}
+                    onClick={() => setColorPaletteIndex(index)}
                 >
                     <CategoryTitle>{element}</CategoryTitle>
                     <MenuColorInput colors={colors} index={index} />
                 </CategoryContainer>
             ))}
-            <ColorPicker width={456} height={228} color={color} onChange={setColor} hideHSV dark />
+            {colorPaletteIndex !== null && (
+                <ColorPicker width={456} height={228} color={color} onChange={setColor} hideHEX hideRGB hideHSB dark />
+            )}
 
             <CategoryContainer>
                 <CategoryTitle>TAILLE</CategoryTitle>
