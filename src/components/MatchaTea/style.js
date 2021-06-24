@@ -30,7 +30,7 @@ const OverviewContainer = styled.div`
     display: flex;
     width: 100%;
     height: 35%;
-    border-top: 10px solid  white;
+    border-top: 10px solid  #FFF205;
     box-sizing: border-box;
 `;
 

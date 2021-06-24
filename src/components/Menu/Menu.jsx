@@ -10,6 +10,7 @@ import {
     CategoryTextInput,
     MenuColorInput,
     ColorPickerContainer,
+    SliderContainer,
 } from './style';
 import { AppContext } from '../../contexts/app.context';
 
@@ -59,16 +60,17 @@ export default function Menu() {
 
             <CategoryContainer>
                 <CategoryTitle>TAILLE</CategoryTitle>
-                <Slider
-                    defaultValue={10}
-                    min={1}
-                    max={10}
-                    onChange={(e) => dispatch({ type: 'SET_SCALE', value: e })}
-                    railStyle={''}
-                    dotStyle={''}
-                />
+                <SliderContainer>
+                    <Slider
+                        defaultValue={10}
+                        min={1}
+                        max={10}
+                        onChange={(e) => dispatch({ type: 'SET_SCALE', value: e })}
+                        trackStyle={{ background: '#7CFF01' }}
+                        handleStyle={{ background: '#f0F', borderColor: 'black' }}
+                    />
+                </SliderContainer>
             </CategoryContainer>
-
         </MenuContainer>
     );
 }

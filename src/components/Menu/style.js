@@ -10,11 +10,11 @@ const MenuContainer = styled.div`
 
 const MenuTitle = styled.p`
     color: #FFF;
-    font-size: 18px;
+    font-size: 28px;
     font-family: 'Big Shoulders Stencil Display', cursive;
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 50px;
+    margin: 50px 0;
 `;
 
 const CategoryContainer = styled.div`
@@ -23,19 +23,26 @@ const CategoryContainer = styled.div`
     align-items: center;
     padding: 0 10px;
     margin-bottom: 10px;
+
+    &:last-child {
+        margin-top: 40px;
+    }
 `;
 
 const CategoryTitle = styled.p`
     color: #FFF;
     font-size: 18;
-    font-family: Arial;
+    font-family: 'Indie Flower', cursive;
     text-transform: uppercase;
 `;
 
 const CategoryTextInput = styled.input`
-    width: 100px;
-    height: 40px;
+    width: 140px;
+    height: 30px;
     background-color: #FFF;
+    border: 0;
+    border-radius: 5px;
+    font-family: 'Indie Flower', cursive;
 `;
 
 const MenuColorInput = styled.div`
@@ -51,6 +58,11 @@ const ColorPickerContainer = styled.div`
     z-index: 1;
 `;
 
+const SliderContainer = styled.div`
+    background: 'red';
+    width: 60%;
+`;
+
 export {
     MenuContainer,
     MenuTitle,
@@ -59,4 +71,5 @@ export {
     CategoryTextInput,
     MenuColorInput,
     ColorPickerContainer,
+    SliderContainer,
 };
