@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Tapioca({ vb, colors }) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width={vb ? '100%' : "280"} height="100%" viewBox={vb ? vb.defaultViewBox : "0 0 133.2 188.9"}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="280" height="100%" viewBox="0 0 133.2 188.9" preserveAspectRatio="xMidYMid meet">
             <g id="bubble">
                 <path fill={colors ? colors[2] : 'gray'} d="M95.9,144.5c-0.7,2.3-3.2,3.6-5.4,2.8c-2.3-0.7-3.5-3.2-2.8-5.5c0.7-2.3,3.2-3.6,5.4-2.8C95.4,139.7,96.6,142.2,95.9,144.5z" />
                 <path fill={colors ? colors[2] : 'gray'} d="M80.1,127.4c-0.8,2.6-3.5,4-6.1,3.2c-2.6-0.8-4-3.6-3.2-6.1c0.8-2.6,3.5-4,6.1-3.2C79.5,122,80.9,124.8,80.1,127.4z" />

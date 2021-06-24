@@ -60,12 +60,10 @@ export default function Menu() {
             <CategoryContainer>
                 <CategoryTitle>TAILLE</CategoryTitle>
                 <Slider
-                    defaultValue={0}
-                    // value={0}
-                    startPoint={0}
-                    min={0}
+                    defaultValue={10}
+                    min={1}
                     max={10}
-                    onChange={0}
+                    onChange={(e) => dispatch({ type: 'SET_SCALE', value: e })}
                     railStyle={''}
                     dotStyle={''}
                 />

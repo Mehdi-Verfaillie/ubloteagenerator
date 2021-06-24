@@ -16,6 +16,7 @@ const SVG = styled.svg.attrs({
 const SVGContainer = styled(SVG)`
     height: 60%;
     width: 100%;
+    transform: ${({ scale }) => `scale(${scale})`};
 `;
 
 const TeaTitle = styled.p`

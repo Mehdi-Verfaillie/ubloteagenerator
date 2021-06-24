@@ -4,7 +4,8 @@ export const AppContext = React.createContext([{}, () => { }]);
 
 const initialState = {
     teaName: 'Thé Matcha',
-    colors: ['#FF728A', '#FE8261', '#8F3939']
+    colors: ['#FF728A', '#FE8261', '#8F3939'],
+    scale: 10,
 };
 
 const reducer = (state, action) => {
@@ -13,6 +14,8 @@ const reducer = (state, action) => {
             return { ...state, teaName: action.value };
         case 'SET_COLORS':
             return { ...state, colors: action.value };
+        case 'SET_SCALE':
+            return { ...state, scale: action.value };
         default:
             return state;
     }
